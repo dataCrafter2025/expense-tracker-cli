@@ -40,10 +40,10 @@ def list_expenses():
     print(f"{row[0]:<3}  {row[1]:<10} {row[2]:<8} {row[3]:<10} {row[4]}")
     print()
 
-def delete_expense():
+def delete_expense(expense_id):
   conn=sqlite3.connect(DB_NAME)
   c=conn.cursor()
-  c.execute("delete from expenses Where id=?",(id,))
+  c.execute("delete from expenses Where id=?",(expense_id,))
   conn.commit()
   conn.close()
 
@@ -51,12 +51,16 @@ def delete_expense():
 
 
 def summary_by_category():
-  conn=sqlite3.connect(DB_NAME)
-  c=conn.cursor()
-  c.execute("DELETE from expenses WHERE id=?",(id,))
-  conn.commit()
-  conn.close()
-  print("Expense deleted")
+    conn = sqlite3.connect(DB_NAME)
+    c = conn.cursor()
+    c.execute("SELECT category, SUM(amount) FROM expenses GROUP BY category")
+    rows = c.fetchall()
+    conn.close()
+    print("\nCategory-wise Summary")
+    print("-" * 30)
+    for row in rows:
+        print(f"{row[0]}: {row[1]}")
+    print()
 
   
 
@@ -70,7 +74,7 @@ def  main():
    print("\n1.Add Expense")
    print("\n2.List Expense")
    print("\n3.Delete Expnse")
-   print("\n3.Summary by Category")
+   print("\n4.Summary by Category")
    print("\nExit")
    choice=input("Please Enter your choise")
 
