@@ -65,13 +65,13 @@ A simple command-line expense tracker application built with Python and SQLite.
 
 ## Screenshots
 ### 1. Adding and Listing Expenses
-![List Expenses](screenshots/list_expenses.png)
+![List Expenses](screenshots/List_Expenses.png)
 
 ### 2. Summary by Category
-![Summary](screenshots/summary.png)
+![Summary](screenshots/summary_by_category.png)
 
 ### 3. Deleting an Expense
-![Delete](screenshots/delete_expense.png)
+![Delete](screenshots/Delete_Expense.png)
 
 
 
