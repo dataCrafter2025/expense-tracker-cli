@@ -51,7 +51,28 @@ Expense Tracker
 5. Exit
 
 
-Screenshots (Optional)
+Screenshots 
+
+
+# Expense Tracker CLI (Python + SQLite)
+
+A simple command-line expense tracker application built with Python and SQLite.
+
+## Features
+- Add, list, and delete expenses
+- Summary by category
+- Data stored in SQLite database
+
+## Screenshots
+### 1. Adding and Listing Expenses
+![List Expenses](screenshots/list_expenses.png)
+
+### 2. Summary by Category
+![Summary](screenshots/summary.png)
+
+### 3. Deleting an Expense
+![Delete](screenshots/delete_expense.png)
+
 
 
 
